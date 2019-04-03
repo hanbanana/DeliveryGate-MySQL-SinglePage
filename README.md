@@ -15,10 +15,7 @@ HTML, CSS, Bootstrap, JavaScript, jQuery, AJAX, MySQL, NPM, Node.js
 
 ### Screenshot
 * Main Page
-![Initial Customer](./views/images/delivery-order-main-page.PNG)
-
-* Create Page
-![Initial Customer](./views/images/delivery-order-createOrder-page.PNG)
+![Initial Customer](./views/images/delivery-order-MainAndcreateOrder-page.PNG)
 
 * Edit Page
 ![Initial Customer](./views/images/delivery-order-edit-page.PNG)
