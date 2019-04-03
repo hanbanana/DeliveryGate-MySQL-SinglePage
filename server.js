@@ -67,7 +67,7 @@ app.get("/order/:id", function (req, res) {
 });
 
 app.get("/customer", function (req, res) {
-  connection.query("SELECT * FROM deliveryOrder;", function (err, data) {
+  connection.query("SELECT * FROM deliveryOrder WHERE Close_ = 'Yes';", function (err, data) {
     if (err) {
       return res.status(500).end();
     }
