@@ -1,0 +1,178 @@
+<div style="margin-left: 200px; margin-right: 200px">
+  <div class="indexNav">
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/create">Create_New</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
+<div style="margin-left: 200px; margin-right: 200px; font-size: 13px">
+ 
+    <label class="heading">Delivery Order History</label>
+    <div class="form-group">
+      <fieldset>
+        <form action="" class="form-group">
+
+          <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                {{!-- <th scope="col" data-sortable="true">ID#</th> --}}
+                <th scope="col">B/L</th>
+                <th scope="col">Terminal Name</th>
+                <th scope="col">Container No.</th>
+                <th scope="col">Vassel No.</th>
+                <th scope="col">ETA</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Seal No.</th>
+                <th scope="col">Delivery Location</th>
+                <th scope="col">Status</th>
+                <th scope="col">Return</th>
+                <th scope="col">Close</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {{#each deliveryOrder}}
+              <tr>
+                {{!-- <td>{{this.id}}</td> --}}
+                <td>{{this.BL}}</td>
+                <td>{{this.Terminal_Name}}</td>
+                <td>{{this.Container_No}}</td>
+                <td>{{this.Vassel_No}}</td>
+                <td>{{this.ETA}}</td>
+                <td>{{this.Weight}}</td>
+                <td>{{this.Seal_No}}</td>
+                <td>{{this.Delivery_Location}}</td>
+                <td>{{this.Status_}}</td>
+                <td>{{this.Return_}}</td>
+                <td>{{this.Close_}}</td>
+                <td><button data-planid="{{this.id}}" class="delplan">Delete</button></td>
+                <td><a href="order/{{this.id}}">Edit</a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+
+          </table>
+
+        </form>
+        <!--END OF FORM ^^-->
+      </fieldset>
+    
+    <hr />
+  </div>
+
+
+<div class="formDiv">
+  <h4>Create New</h4>
+  <form id="createplan">
+    <div class="form-group-sm row">
+      <div class="col-sm">
+        <label for="ex1">B/L</label>
+        <input class="form-control form-control-sm" placeholder="BL" name="BL" id="BL">
+      </div>
+      <div class="col">
+        <label for="ex2">Terminal Name</label>
+        <input class="form-control form-control-sm" placeholder="Terminal Name" name="Terminal_Name" id="Terminal_Name">
+      </div>
+      <div class="col">
+        <label for="ex3">Container No.</label>
+        <input class="form-control form-control-sm" placeholder="Container No." name="Container_No" id="Container_No">
+      </div>
+      <div class="col">
+        <label for="ex1">Vassel No.</label>
+        <input class="form-control form-control-sm" placeholder="Vassel No." name="Vassel_No" id="Vassel_No">
+      </div>
+      <div class="col">
+        <label for="ex2">ETA</label>
+        <input type="date" class="form-control form-control-sm" placeholder="ETA" name="ETA" id="ETA">
+      </div>
+      <div class="col">
+        <label for="ex3">Weight(kg)</label>
+        <input type="number" step="0.001" name="amount" placeholder="0.000" class="form-control form-control-sm"
+          name="Weight" id="Weight">
+      </div>
+      <div class="col">
+        <label for="ex1">Seal No.</label>
+        <input class="form-control form-control-sm" placeholder="Seal No." name="Seal_No" id="Seal_No">
+      </div>
+      <div class="col">
+        <label for="ex2">Delivery Location</label>
+        <input class="form-control form-control-sm" placeholder="Delivery Location" name="Delivery_Location"
+          id="Delivery_Location">
+      </div>
+      <div class="col">
+        <label for="ex3">Status</label>
+        <select class="form-control form-control-sm" name="Status_" id="Status_">
+          <option selected>Choose...</option>
+          <option>Done</option>
+          <option>Pending</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="ex1">Return</label>
+        <select class="form-control form-control-sm" name="Return_" id="Return_">
+          <option selected>Choose...</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="ex2">Close</label>
+        <select class="form-control form-control-sm" name="Close_" id="Close_">
+          <option selected>Choose...</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+          <button type="submit" class="btn btn-secondary btn-sm" style="margin-top: 25px">Save</button>
+    </div>
+  </form>
+  <br>
+  <hr>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+{{!-- Table Bootstrap --}}
+  $(document).ready(function () {
+    $('#example').DataTable();
+  });
+
+  $(".delplan").on("click", function (event) {
+    var id = $(this).data("planid");
+    // Send the DELETE request.
+    $.ajax("/todos/" + id, {
+      type: "DELETE"
+    }).then(
+      function () {
+        console.log("deleted id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+</script>
