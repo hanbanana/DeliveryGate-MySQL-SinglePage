@@ -8,6 +8,7 @@ CREATE TABLE DeliveryOrder
 id int NOT NULL AUTO_INCREMENT,
 BL varchar(255) NOT NULL,
 Terminal_Name VARCHAR(50) NOT NULL,
+Container_No VARCHAR(50) NOT NULL,
 Vassel_No varchar(255) NOT NULL,
 ETA VARCHAR(50) NOT NULL,
 Weight varchar(255) NOT NULL,
