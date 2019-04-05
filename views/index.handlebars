@@ -32,7 +32,7 @@
                 <th scope="col">ETA</th>
                 <th scope="col">Weight (kg)</th>
                 <th scope="col">Seal No.</th>
-                <th scope="col">Delivery Location</th>
+                <th scope="col">Local Delivery</th>
                 <th scope="col">Status</th>
                 <th scope="col">Return</th>
                 <th scope="col">Close</th>
@@ -44,7 +44,7 @@
 
             <tbody>
               {{#each deliveryOrder}}
-              <tr>
+              <tr style="text-transform: uppercase">
                 {{!-- <td>{{this.id}}</td> --}}
                 <td>{{this.BL}}</td>
                 <td>{{this.Terminal_Name}}</td>
@@ -79,42 +79,42 @@
   <form id="createplan">
     <div class="form-group-sm row">
       <div class="col-sm">
-        <label for="validationCustom01">B/L</label>
-        <input class="form-control form-control-sm" placeholder="BL" name="BL" id="BL" required>
+        <label for="ex1">B/L</label>
+        <input class="form-control form-control-sm" placeholder="BL" name="BL" id="BL" required style="text-transform: uppercase">
       </div>
       <div class="col">
         <label for="ex2">Terminal Name</label>
-        <input class="form-control form-control-sm" placeholder="Terminal Name" name="Terminal_Name" id="Terminal_Name" required>
+        <input class="form-control form-control-sm" placeholder="Terminal Name" name="Terminal_Name" id="Terminal_Name" required style="text-transform: uppercase">
       </div>
       <div class="col">
         <label for="ex3">Container No.</label>
-        <input class="form-control form-control-sm" placeholder="Container No." name="Container_No" id="Container_No" required>
+        <input class="form-control form-control-sm" placeholder="Container No." name="Container_No" id="Container_No" required style="text-transform: uppercase">
       </div>
       <div class="col">
         <label for="ex1">Vassel No.</label>
-        <input class="form-control form-control-sm" placeholder="Vassel No." name="Vassel_No" id="Vassel_No" required>
+        <input class="form-control form-control-sm" placeholder="Vassel No." name="Vassel_No" id="Vassel_No" required style="text-transform: uppercase">
       </div>
       <div class="col">
         <label for="ex2">ETA</label>
-        <input type="date" class="form-control form-control-sm" placeholder="ETA" name="ETA" id="ETA" required>
+        <input type="date" class="form-control form-control-sm" placeholder="ETA" name="ETA" id="ETA" required style="text-transform: uppercase">
       </div>
       <div class="col">
         <label for="ex3">Weight (kg)</label>
         <input type="number" step="0.001" name="amount" placeholder="0.000" class="form-control form-control-sm"
-          name="Weight" id="Weight" required>
+          name="Weight" id="Weight" required style="text-transform: uppercase">
       </div>
       <div class="col">
         <label for="ex1">Seal No.</label>
-        <input class="form-control form-control-sm" placeholder="Seal No." name="Seal_No" id="Seal_No" required>
+        <input class="form-control form-control-sm" placeholder="Seal No." name="Seal_No" id="Seal_No" required style="text-transform: uppercase">
       </div>
       <div class="col">
-        <label for="ex2">Delivery Location</label>
-        <input class="form-control form-control-sm" placeholder="Delivery Location" name="Delivery_Location"
-          id="Delivery_Location" required>
+        <label for="ex2">Local Delivery</label>
+        <input class="form-control form-control-sm" placeholder="Local Delivery" name="Delivery_Location"
+          id="Delivery_Location" required style="text-transform: uppercase">
       </div>
       <div class="col">
         <label for="ex3">Status</label>
-        <select class="form-control form-control-sm" name="Status_" id="Status_" required>
+        <select class="form-control form-control-sm" name="Status_" id="Status_" required style="text-transform: uppercase">
           <option selected>Choose...</option>
           <option>Done</option>
           <option>Pending</option>
@@ -122,7 +122,7 @@
       </div>
       <div class="col">
         <label for="ex1">Return</label>
-        <select class="form-control form-control-sm" name="Return_" id="Return_" required>
+        <select class="form-control form-control-sm" name="Return_" id="Return_" required style="text-transform: uppercase">
           <option selected>Choose...</option>
           <option>Yes</option>
           <option>No</option>
@@ -130,7 +130,7 @@
       </div>
       <div class="col">
         <label for="ex2">Close</label>
-        <select class="form-control form-control-sm" name="Close_" id="Close_" required>
+        <select class="form-control form-control-sm" name="Close_" id="Close_" required style="text-transform: uppercase">
           <option selected>Choose...</option>
           <option>Yes</option>
           <option>No</option>
