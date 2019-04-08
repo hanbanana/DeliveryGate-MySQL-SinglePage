@@ -23,7 +23,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  database: "hrx_delivery"
+  database: "hrx_delivery_db"
 });
 
 connection.connect(function (err) {
@@ -151,3 +151,5 @@ app.listen(PORT, staticIP, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: " + staticIP + ":" + PORT);
 });
+
+// app.listen(process.env.PORT);
