@@ -42,6 +42,16 @@ app.get("/", function (req, res) {
       return res.status(500).end();
     }
 
+    res.render("wrongPage", { deliveryOrder: data });
+  });
+});
+
+app.get("/gate/DeliveryOrder", function (req, res) {
+  connection.query("SELECT * FROM deliveryOrder;", function (err, data) {
+    if (err) {
+      return res.status(500).end();
+    }
+
     res.render("index", { deliveryOrder: data });
   });
 });
